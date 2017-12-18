@@ -139,15 +139,15 @@
         mounted() {
             this.init()
         },
-        init() {
+        methods: {
             init() {
-                let userId = this.$storage.get('user').id
-                this.$http.get(`/users/${userId}/orders`)
+                let orderId = this.$route.params.id
+                this.$http.get(`/orders/${orderId}`)
                     .then(response => {
                             let data = response.data
                             console.log(data)
                             if (data.code === 0) {
-                                this.orders = data.data
+                                this.order = data.data
                             }
                         },
                         response => {
