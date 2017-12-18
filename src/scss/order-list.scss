@@ -1,0 +1,45 @@
+@import "var";
+
+.order-list {
+    .order-item {
+        display: block;
+        padding: 0 px2rem(28);
+        margin-bottom: px2rem(14);
+        background-color: #fff;
+    }
+    .order-header {
+        display: flex;
+        height: px2rem(94);
+        align-items: center;
+        border-bottom: 1px solid #e4e4e4;
+        .logo {
+            width: px2rem(32);
+            margin-right: px2rem(14);
+        }
+        .shop-name {
+            font-size: px2rem(30);
+        }
+        .order-state {
+            margin-left: auto;
+        }
+    }
+    .order-bd {
+        display: block;
+        padding-bottom: px2rem(36);
+        .info {
+            padding-right: px2rem(16);
+            color: #666;
+            text-align: right;
+        }
+        .price {
+            font-weight: bold;
+        }
+    }
+    .order-footer {
+        display: flex;
+        height: px2rem(104);
+        justify-content: flex-end;
+        align-items: center;
+        border-top: 1px solid #e4e4e4;
+    }
+}
