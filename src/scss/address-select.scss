@@ -1,0 +1,105 @@
+@import "var";
+
+.page-address-select {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    .page-body {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+    .search-box {
+        display: flex;
+        flex-shrink: 0;
+        width: 100%;
+        height: px2rem(144);
+        padding: px2rem(36) px2rem(28) 0 px2rem(28);
+        .input-box {
+            display: flex;
+            align-items: center;
+            flex: auto;
+            height: px2rem(66);
+            border: 1px solid #e4e4e4;
+            border-radius: px2rem(33);
+            .icon-search {
+                display: block;
+                width: px2rem(72);
+                text-align: center;
+                color: #999;
+            }
+            .input {
+                flex: auto;
+                margin-right: 6px;
+                font-size: px2rem(30);
+                border: none;
+                outline: none;
+            }
+            .icon-close {
+                display: block;
+                width: px2rem(72);
+                text-align: center;
+                color: #e4e4e4;
+            }
+        }
+        .cancel {
+            display: block;
+            width: px2rem(120);
+            color: $primary;
+            font-size: px2rem(30);
+            text-align: right;
+            line-height: px2rem(66);
+        }
+    }
+    .map {
+        width: 100%;
+        height: px2rem(482);
+        flex-shrink: 0;
+    }
+    .select-address-list-box {
+        position: absolute;
+        top: px2rem(622);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .select-address-list {
+        padding: 0 px2rem(28);
+        background-color: #fff;
+        overflow: auto;
+        .address-item {
+            padding: px2rem(32) 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .title {
+            margin-bottom: px2rem(16);
+            font-size: px2rem(30);
+        }
+        .detail {
+            color: #999;
+        }
+    }
+    #l-map {
+        height: px2rem(484);
+        width: 100%;
+    }
+    #r-result {
+        width: 100%;
+    }
+    #flag {
+        width: 3px;
+        height: 3px;
+        border: 0px;
+        position: absolute;
+        top: 206px;
+        left: 210px;
+    }
+}
+

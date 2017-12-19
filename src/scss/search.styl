@@ -1,0 +1,60 @@
+.search-page {
+    height: 100%;
+    background-color: #fff;
+    .result-empty {
+        padding: px2rem(458) 0;
+        color: #999;
+        font-size: px2rem(30);
+        text-align: center;
+    }
+    .search-box {
+        display: flex;
+        width: 100%;
+        padding: px2rem(36) px2rem(28) 0 px2rem(28);
+        .input-box {
+            display: flex;
+            align-items: center;
+            flex: auto;
+            height: px2rem(66);
+            border: 1px solid #e4e4e4;
+            border-radius: px2rem(33);
+            .icon-search {
+                display: block;
+                width: px2rem(72);
+                text-align: center;
+                color: #999;
+            }
+            .input {
+                flex: auto;
+                margin-right: 6px;
+                font-size: px2rem(30);
+                border: none;
+                outline: none;
+            }
+            .icon-close {
+                display: block;
+                width: px2rem(72);
+                text-align: center;
+                color: #e4e4e4;
+            }
+        }
+        .cancel {
+            display: block;
+            width: px2rem(120);
+            color: $primary;
+            font-size: px2rem(30);
+            text-align: right;
+            line-height: px2rem(66);
+        }
+    }
+}
+.search-food-list {
+    position: absolute;
+    top: px2rem(104);
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    .scroll-item {
+        padding: 0 px2rem(28);
+    }
+}

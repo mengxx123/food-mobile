@@ -8,7 +8,10 @@
                 <router-link to="/shops/1">店铺详情</router-link>
                 <div>
                     <router-link to="/orders">我的订单</router-link>
-                    <router-link to="/orders/1">订单详情</router-link>
+                </div>
+                <div>
+                    <router-link to="/addresses">我的2地址</router-link>
+                    <router-link to="/search">搜索</router-link>
                 </div>
                 <!--<img src="/static/img/page.jpg" style="width: 100%">-->
             </div>

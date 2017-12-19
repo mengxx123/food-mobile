@@ -1,0 +1,43 @@
+@import "var";
+
+.page-order-detail {
+}
+
+.confirm-pay {
+    .time-box {
+        height: px2rem(160);
+        padding-top: px2rem(42);
+        text-align: center;
+        background-color: #fff;
+        .time-text {
+            margin-bottom: px2rem(20);
+            font-size: px2rem(28);
+        }
+        .time {
+            font-size: px2rem(38);
+        }
+    }
+    .pay-type {
+        padding-left: px2rem(28);
+        line-height: px2rem(84);
+    }
+    .pay-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: px2rem(100);
+        padding: 0 px2rem(28);
+        background-color: #fff;
+        .pay-content {
+            display: flex;
+        }
+        .iconfont {
+            margin-right: px2rem(24);
+            color: #41b035;
+            font-size: px2rem(44);
+        }
+        .checkbox {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 <template>
     <header class="page-header">
         <div class="container">
-            <div>这是页面头部</div>
+            <div>{{ title }}</div>
         </div>
     </header>
 </template>
@@ -10,6 +10,11 @@
     export default {
         data() {
             return {
+            }
+        },
+        props: {
+            title: {
+                default: '默认标题'
             }
         },
         mounted() {

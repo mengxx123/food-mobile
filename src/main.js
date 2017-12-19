@@ -7,14 +7,16 @@ import './scss/main.scss'
 import ui from './components/index'
 import http from './util/http'
 import qs from 'qs'
+import store from './store'
 import storage from './util/storage'
+import log from '@/util/log'
 import './util/rem.js'
 
 Vue.config.productionTip = false
-
 Vue.prototype.$http = http
 Vue.prototype.$qs = qs
 Vue.prototype.$storage = storage
+Vue.prototype.$logger = log
 
 Vue.use(ui)
 
@@ -22,6 +24,7 @@ Vue.use(ui)
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: {App}
 })

@@ -6,6 +6,15 @@ const About = resolve => require(['@/views/About'], resolve)
 
 const Order = resolve => require(['@/views/Order'], resolve)
 const OrderDetail = resolve => require(['@/views/OrderDetail'], resolve)
+const OrderPay = resolve => require(['@/views/OrderPay'], resolve)
+
+const ShopDetail = resolve => require(['@/views/ShopDetail'], resolve)
+
+const Address = resolve => require(['@/views/Address'], resolve)
+const AddressAdd = resolve => require(['@/views/AddressAdd'], resolve)
+const AddressSelect = resolve => require(['@/views/AddressSelect'], resolve)
+
+const Search = resolve => require(['@/views/Search'], resolve)
 
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
@@ -29,6 +38,20 @@ let routes = [
         }
     },
     {
+        path: '/search',
+        component: Search,
+        meta: {
+            title: '搜索'
+        }
+    },
+    {
+        path: '/shops/:id',
+        component: ShopDetail,
+        meta: {
+            title: '店铺详情'
+        }
+    },
+    {
         path: '/orders',
         component: Order,
         meta: {
@@ -43,15 +66,43 @@ let routes = [
         }
     },
     {
+        path: '/orders/:id/pay',
+        component: OrderPay,
+        meta: {
+            title: '在线支付'
+        }
+    },
+    {
+        path: '/addresses',
+        component: Address,
+        meta: {
+            title: '收货地址'
+        }
+    },
+    {
+        path: '/addresses/add',
+        component: AddressAdd,
+        meta: {
+            title: '添加收货地址'
+        }
+    },
+    {
+        path: '/addresses/select',
+        component: AddressSelect,
+        meta: {
+            title: '选择'
+        }
+    },
+    // {
+    //     path: '*',
+    //     redirect: '/404'
+    // },
+    {
         path: '/404',
         component: Error404,
         meta: {
             title: '页面找不到了'
         }
-    },
-    {
-        path: '*',
-        redirect: '/404'
     }
 ]
 

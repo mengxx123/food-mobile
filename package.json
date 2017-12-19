@@ -12,11 +12,14 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "clipboard": "^1.7.1",
+    "js-md5": "^0.7.3",
     "module": "^1.2.5",
     "qs": "^6.5.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.9"
+    "vue-server-renderer": "^2.5.9",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

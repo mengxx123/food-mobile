@@ -3,7 +3,7 @@
     var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
     var setElement = function () {
         var clientWidth = docEl.clientWidth
-        var scale = clientWidth / 375
+        var scale = clientWidth / 750
 
         if (scale < 1) {
             docEl.style.fontSize = Math.ceil(scale * 100) + 'px'
