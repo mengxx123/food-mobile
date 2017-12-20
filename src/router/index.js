@@ -10,11 +10,21 @@ const OrderPay = resolve => require(['@/views/OrderPay'], resolve)
 
 const ShopDetail = resolve => require(['@/views/ShopDetail'], resolve)
 
+const GoodsDetail = resolve => require(['@/views/GoodsDetail'], resolve)
+
 const Address = resolve => require(['@/views/Address'], resolve)
 const AddressAdd = resolve => require(['@/views/AddressAdd'], resolve)
 const AddressSelect = resolve => require(['@/views/AddressSelect'], resolve)
 
 const Search = resolve => require(['@/views/Search'], resolve)
+
+const Me = resolve => require(['@/views/Me'], resolve)
+const MeV2 = resolve => require(['@/views/MeV2'], resolve)
+const Money = resolve => require(['@/views/Money'], resolve)
+const Score = resolve => require(['@/views/Score'], resolve)
+const Coupon = resolve => require(['@/views/Coupon'], resolve)
+const MoneyDetail = resolve => require(['@/views/MoneyDetail'], resolve)
+const MoneyRecharge = resolve => require(['@/views/MoneyRecharge'], resolve)
 
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
@@ -38,10 +48,10 @@ let routes = [
         }
     },
     {
-        path: '/search',
-        component: Search,
+        path: '/goodses/:id',
+        component: GoodsDetail,
         meta: {
-            title: '搜索'
+            title: '商品详情'
         }
     },
     {
@@ -49,6 +59,13 @@ let routes = [
         component: ShopDetail,
         meta: {
             title: '店铺详情'
+        }
+    },
+    {
+        path: '/shops/:id/search',
+        component: Search,
+        meta: {
+            title: '搜索店内商品'
         }
     },
     {
@@ -91,6 +108,55 @@ let routes = [
         component: AddressSelect,
         meta: {
             title: '选择'
+        }
+    },
+    {
+        path: '/me',
+        component: Me,
+        meta: {
+            title: '个人中心'
+        }
+    },
+    {
+        path: '/me/v2',
+        component: MeV2,
+        meta: {
+            title: '个人中心'
+        }
+    },
+    {
+        path: '/me/money',
+        component: Money,
+        meta: {
+            title: '余额'
+        }
+    },
+    {
+        path: '/me/score',
+        component: Score,
+        meta: {
+            title: '积分'
+        }
+    },
+    {
+        path: '/me/coupon',
+        component: Coupon,
+        meta: {
+            title: '优惠券'
+        }
+    },
+    {
+        path: '/me/money/detail',
+        component: MoneyDetail,
+        meta: {
+            title: '余额明细'
+        }
+    },
+    {
+        path: '/me/money/recharge',
+        component: MoneyRecharge,
+        meta: {
+            title: '充值'
         }
     },
     // {

@@ -1,21 +1,21 @@
 <template>
     <div class="page page-shop-detail order">
-        <ui-header></ui-header>
+        <ui-header title="五谷鱼粉"></ui-header>
         <main class="page-body">
             <div ref="headerRef" class="order-header retainbb" :style="headerStyle">
                 <div ref="infoRef" class="header__info">
                     <img src="/static/img/logo.png" alt="" @click="showNotice">
 
                     <div class="header__title">
-                        <h1 @click="showNotice">{{ shopInfo.shopName }}</h1>
+                        <h1 @click="showNotice">{{ shop.name }}</h1>
                         <span class="tag" v-if="!isCloseShop">营业中</span>
-                        <router-link to="search">
+                        <router-link :to="`/shops/${shopId}/search`">
                             <i class="iconfont icon-search"></i>
                         </router-link>
                     </div>
                     <div class="header__sound" @click="showNotice">
                         <i class="iconfont icon-sound"></i>
-                        <span>催单电话: {{ shopInfo.telephone }}</span>
+                        <span>催单电话: {{ shop.phone }}</span>
                     </div>
                 </div>
                 <div ref="linkRef" class="tab-nav-link">
@@ -44,8 +44,8 @@
                         <i class="iconfont icon-close-line" @click="hideNotice"></i>
                     </div>
                     <div class="notice-body">
-                        <p>催单电话：{{ shopInfo.telephone }}，早点下单早点配送哦！！！</p>
-                        <p>营业时间：{{ shopInfo.openTime }}</p>
+                        <p>催单电话：{{ shop.telephone }}，早点下单早点配送哦！！！</p>
+                        <p>营业时间：{{ shop.openTime }}</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="dialog-box dialog-box-close">
                     <img class="img" src="/static/img/close-shop.png">
                     <div class="text">本店打烊啦</div>
-                    <div class="time-text">营业时间： {{ shopInfo.openTime }}</div>
+                    <div class="time-text">营业时间： {{ shop.openTime }}</div>
                     <div class="btn-box">
                         <button class="btn-primary" @click="closeDialog">我知道了</button>
                     </div>
@@ -80,8 +80,9 @@
         },
         data () {
             return {
+                shopId: '',
                 scrollId: 'scrollId',
-                shopInfo: {},
+                shop: {},
                 isShowFood: true,
                 infoHeight: 0,
                 translate: 0,
@@ -106,6 +107,7 @@
             }
         },
         mounted () {
+            this.shopId = this.$route.params.id
             this.headerHeight = this.$refs.headerRef.offsetHeight
             this.linkHeight = this.$refs.linkRef.offsetHeight
             this.infoHeight = this.headerHeight - this.linkHeight
@@ -116,11 +118,16 @@
         },
         methods: {
             getData () {
-                const shopInfo = storage.get('shopInfo')
-                if (shopInfo && shopInfo.shopId === parseInt(this.$route.params.shopId)) {
-                    this.shopInfo = shopInfo
-                    return
-                }
+                console.log('获取店铺')
+                const shopId = this.$route.params.id
+                this.$http.get(`/shops/${shopId}`)
+                    .then(response => {
+                        let data = response.data
+                        console.log(data)
+                        if (data.code === 0) {
+                            this.shop = data.data
+                        }
+                    })
                 this.getShop()
             },
             showNotice () {
@@ -176,8 +183,8 @@
                             let data = response.data
                             data.forEach(item => {
                                 if (item.shopId === parseInt(this.$route.params.shopId)) {
-                                    this.shopInfo = item
-                                    storage.setItem('shopInfo', item)
+                                    this.shop = item
+                                    storage.setItem('shop', item)
                                 }
                             })
                         })

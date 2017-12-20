@@ -1,0 +1,30 @@
+@import "var";
+
+.page-money {
+    background-color: #fff;
+    .money-box {
+        padding-top: px2rem(300);
+        text-align: center;
+        .title {
+            margin-bottom: px2rem(40);
+            font-size: 18px;
+        }
+        .money {
+            margin-bottom: px2rem(160);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .value {
+            font-size: 32px;
+        }
+        .btn-recharge {
+            margin-bottom: px2rem(80);
+        }
+        .btn-2 {
+            margin-bottom: px2rem(80);
+        }
+        .faq {
+
+        }
+    }
+}

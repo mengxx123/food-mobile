@@ -1,0 +1,146 @@
+@import "var";
+
+.page-me {
+    //background-color: #fff;
+}
+.user-info-box {
+    background-color: $primary_dark;
+    .avatar {
+        width: 80px;
+        height: 80px;
+        border: 3px solid $primary;
+        border-radius: 50%;
+    }
+    .name {
+        color: #5b4520;
+        font-size: 1.5em;
+    }
+}
+.page-me-section {
+    margin-top: 16px;
+    background-color: #fff;
+    .header {
+        height: 30px;
+        padding: 8px;
+        border-bottom: 1px solid $line;
+        .title {
+            color: #999;
+        }
+    }
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            width: 25%;
+            border-right: 1px solid $line;
+            border-bottom: 1px solid $line;
+            text-align: center;
+        }
+        .link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 24px 0;
+        }
+        .title {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.vip-card {
+    color: #fff;
+    padding: 25px 32px 15px;
+    .inner {
+        position: relative;
+    }
+    .img {
+        width: 100%;
+        border-radius: .7em;
+    }
+    .header {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        left: 0;
+        padding: 20px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        flex: none;
+        margin-right: 5px;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        height: 100%;
+    }
+    .footer {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 20px;
+    }
+}
+
+.dialog-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    .dialog {
+        width: 100%;
+        padding: 15px 17px 0;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+    .title {
+        margin-bottom: 21px;
+        font-size: 16px;
+    }
+    .tip {
+        color: #666;
+    }
+}
+
+.loading-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    .dialog {
+        width: 100px;
+        //height: 200px;
+        //padding: 15px 17px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 4px;
+    }
+    img {
+        position: relative;
+        top: -20px;
+    }
+}

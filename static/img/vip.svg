@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="175px" height="55px" viewBox="0 0 175 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>VIP</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6.5510263 3.69551753 47.1066634 2.46960866 41.0933969 23.5880793 47.8004282 42.8336879 2.487218 43.4806411"></polygon>
+        <polygon id="path-3" points="6.5510263 3.69551753 47.1066634 2.46960866 41.0933969 23.5880793 47.8004282 42.8336879 2.487218 43.4806411"></polygon>
+        <path d="M68.18625,11.58 L75.86625,33 L79.82625,33 L87.50625,11.58 L83.96625,11.58 L77.90625,29.34 L77.81625,29.34 L71.72625,11.58 L68.18625,11.58 Z M88.87875,11.58 L88.87875,33 L92.11875,33 L92.11875,11.58 L88.87875,11.58 Z M95.44125,11.58 L104.32125,11.58 C109.42125,11.58 111.97125,13.74 111.97125,18.09 C111.97125,22.47 109.39125,24.66 104.26125,24.66 L98.71125,24.66 L98.71125,33 L95.44125,33 L95.44125,11.58 Z M98.71125,14.37 L98.71125,21.87 L104.05125,21.87 C105.67125,21.87 106.84125,21.57 107.59125,20.97 C108.31125,20.37 108.70125,19.41 108.70125,18.09 C108.70125,16.77 108.31125,15.81 107.56125,15.27 C106.81125,14.67 105.64125,14.37 104.05125,14.37 L98.71125,14.37 Z" id="path-5"></path>
+        <filter x="-2.3%" y="-4.7%" width="109.1%" height="118.7%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.949019608   0 0 0 0 0.415686275   0 0 0 0 0.11372549  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="个人中心" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会员" transform="translate(-287.000000, -330.000000)">
+            <g id="VIP" transform="translate(285.000000, 328.000000)">
+                <g id="Rectangle-5" transform="translate(127.634551, 11.757752)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#F26A1D" transform="translate(25.143823, 22.975125) rotate(6.000000) translate(-25.143823, -22.975125) " xlink:href="#path-1"></use>
+                    <rect fill="#C13009" mask="url(#mask-2)" transform="translate(9.705284, 34.152132) rotate(-11.000000) translate(-9.705284, -34.152132) " x="-3.20037536" y="29.3105408" width="25.8113196" height="9.68318196"></rect>
+                </g>
+                <g id="Rectangle-5-Copy" transform="translate(26.933333, 34.757752) scale(-1, 1) translate(-26.933333, -34.757752) translate(1.933333, 11.757752)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Mask" fill="#F26A1D" transform="translate(25.143823, 22.975125) rotate(6.000000) translate(-25.143823, -22.975125) " xlink:href="#path-3"></use>
+                    <rect id="Rectangle-5" fill="#C13009" mask="url(#mask-4)" transform="translate(9.705284, 34.152132) rotate(-11.000000) translate(-9.705284, -34.152132) " x="-3.20037536" y="29.3105408" width="25.8113196" height="9.68318196"></rect>
+                </g>
+                <path d="M24.1715976,8.50516796 C24.1715976,8.50516796 56.8460552,2 89.5205127,2 C122.19497,2 154.869428,8.50516796 154.869428,8.50516796 L150.987314,48.1866925 C150.987314,48.1866925 122.19497,41.6815245 89.5205127,41.6815245 C56.8460552,41.6815245 28.0537114,48.1866925 28.0537114,48.1866925 L24.1715976,8.50516796 Z" id="Rectangle-4" fill="#FF8116"></path>
+                <g id="txt" transform="translate(44.000000, 24.000000)" fill-rule="nonzero" fill="#FFFFFF">
+                    <polygon id="Line" points="0.270391883 2.67668708 7.88826026 1.71930568 7.76356539 0.727110549 0.145697005 1.68449194"></polygon>
+                    <polygon id="Line-Copy-6" points="91.1014458 1.71566492 83.496712 0.658118554 83.3589733 1.64858715 90.9637071 2.70613351"></polygon>
+                </g>
+                <rect id="Rectangle" x="0" y="0" width="180" height="60"></rect>
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

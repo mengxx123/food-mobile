@@ -1,0 +1,87 @@
+@import "var";
+
+.cart-list-wrap {
+    width: 100%;
+    margin-bottom: px2rem(104);
+    background: #fff;
+    .mask {
+        opacity: 1;
+    }
+    .cart-list {
+        position: absolute;
+        bottom: px2rem(104);
+        width: 100%;
+        background: #fff;
+        transform: translate(0, 0);
+    }
+    .cart-list-hd {
+        padding: 16px px2rem(28);
+        background: #f8f8f8;
+        span {
+            display: inline-block;
+            font-size: 13px;
+            vertical-align: middle;
+            &:before {
+                content: "";
+                float: left;
+                width: 2px;
+                height: 12px;
+                margin: 0 2px 0 0;
+                background: $primary;
+            }
+        }
+        button {
+            @extends .reset-btn;
+            float: right;
+            font-size: 13px;
+            i {
+                float: left;
+                font-size: 14px;
+                color: #999;
+                margin: -1px 0 0;
+            }
+        }
+    }
+    .cart-list-item {
+        padding: 15px px2rem(28);
+        span {
+            font-size: 15px;
+        }
+        .counter-container,
+        .actual,
+        .amount {
+            float: right;
+        }
+        .counter-container {
+            width: px2rem(142);
+            margin-top: -3px;
+        }
+        .actual {
+            margin-right: 10px;
+            color: $red;
+        }
+        .amount {
+            margin: 2px 5px 0 0;
+            font-size: 13px;
+            color: #999;
+            text-decoration: line-through;
+        }
+    }
+}
+
+.cartListBounce-enter,
+.cartListBounce-leave-to {
+    .mask {
+        opacity: 0;
+    }
+    .cart-list {
+        transform: translate(0, 100%);
+    }
+}
+.cartListBounce-enter-active,
+.cartListBounce-leave-active {
+    .mask,
+    .cart-list {
+        transition: all .3s;
+    }
+}

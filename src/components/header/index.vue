@@ -1,6 +1,7 @@
 <template>
     <header class="page-header">
         <div class="container">
+            <button class="back" @click="back">返回2</button>
             <div>{{ title }}</div>
         </div>
     </header>
@@ -20,6 +21,9 @@
         mounted() {
         },
         methods: {
+            back() {
+                this.$router.go(-1)
+            }
         }
     }
 </script>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>二维码 (1)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="个人中心" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会员卡lv1" transform="translate(-529.000000, -40.000000)" fill="#FFFFFF">
+            <g id="二维码-(1)" transform="translate(529.000000, 40.000000)">
+                <g id="Group">
+                    <path d="M0,0 L0,19 L19,19 L19,0 L0,0 Z M15,15 L4,15 L4,4 L15,4 L15,15 Z" id="Shape"></path>
+                    <polygon id="Shape" points="8 8 12 8 12 12 8 12"></polygon>
+                    <path d="M23,0 L23,19 L42,19 L42,0 L23,0 Z M38,15 L27,15 L27,4 L38,4 L38,15 Z" id="Shape"></path>
+                    <polygon id="Shape" points="31 8 35 8 35 12 31 12"></polygon>
+                    <path d="M0,23 L0,42 L19,42 L19,23 L0,23 Z M15,38 L4,38 L4,27 L15,27 L15,38 Z" id="Shape"></path>
+                    <polygon id="Shape" points="8 31 12 31 12 35 8 35"></polygon>
+                    <polygon id="Shape" points="38 23 38 27 34 27 34 23 23 23 23 42 27 42 27 34 27 34 27 31 31 31 31 34 42 34 42 23"></polygon>
+                    <polygon id="Shape" points="31 38 35 38 35 42 31 42"></polygon>
+                    <polygon id="Shape" points="38 38 42 38 42 42 38 42"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

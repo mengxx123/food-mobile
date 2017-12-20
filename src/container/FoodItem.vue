@@ -1,17 +1,17 @@
 <template>
-    <div :class="['food-item', {'retainbb': !isLast}]">
-        <img :src="returnImg(food.picUrl)" alt="" @click="goDetail(food.menuId)">
+    <div :class="['food-item', {}]">
+        <img :src="goods.image" alt="" @click="goDetail(goods.id)">
         <div>
-            <h3 @click="goDetail(food.menuId)">{{food.menuName}}</h3>
-            <p @click="goDetail(food.menuId)">{{food.menuDetail}}</p>
-            <span class="sales">月销 {{food.monthSells}}</span>
+            <h3 @click="goDetail(goods.id)">{{ goods.name }}</h3>
+            <p @click="goDetail(goods.id)">{{ goods.description }}</p>
+            <span class="sales">月销 {{ goods.monthSells }}</span>
             <div>
-                <span class="actual">￥{{food.discountPrice}}</span>
-                <span class="amount">￥{{food.menuPrice}}</span>
+                <span class="actual">￥{{ goods.discountPrice }}</span>
+                <span class="amount">￥{{ goods.price }}</span>
                 <div class="counter-container" v-if="isCloseShop">
                     <lc-counter
-                            :menuItem="food"
-                            :value="food.number"
+                            :menuItem="goods"
+                            :value="goods.number"
                             @input="handleNumber">
                     </lc-counter>
                 </div>
@@ -25,8 +25,7 @@
 
     export default {
         props: {
-            food: [Object],
-            isLast: [Boolean],
+            goods: [Object],
             isCloseShop: storage.get('isCloseShop')
         },
         data () {
@@ -44,12 +43,7 @@
                 if (time < 100) {
                     return
                 }
-                this.$router.push({
-                    name: 'foodDetail',
-                    params: {
-                        foodId: id
-                    }
-                })
+                this.$router.push(`/goodses/${id}`)
             },
             returnImg (url) {
                 return this.$oss.retSignatureUrl(url)

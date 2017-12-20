@@ -6,6 +6,11 @@
                 <div class="tip">可选择以下地址</div>
                 <div class="manage" @click="manage">{{ managing ? '完成' : '管理' }}</div>
             </h4>
+            <div class="empty-box empty-location" v-if="!addresses.length">
+                <img class="ic" src="/static/img/cartoon-location.svg">
+                <div class="text">主人还没有收货地址 </div>
+                <div class="text">快来添加一个吧～</div>
+            </div>
             <ul class="address-list address-list-in" :class="{managing: managing}">
                 <li class="address-item" v-for="address in addresses">
                     <i class="iconfont icon-remove" @click="remove(inAddresses, address)" v-if="managing"></i>

@@ -1,18 +1,16 @@
 <template>
-    <div class="page-home">
-        <ui-header></ui-header>
-        <main class="page-body">
-            <div class="container">
-                <router-link to="/about">关于</router-link>
-                <router-link to="/shops/1">店铺详情</router-link>
-                <div>
-                    <router-link to="/me">个人中心</router-link>
+    <div class="page page-money-detail">
+        <ui-header title="余额明细"></ui-header>
+        <main class="page-body" v-if="user">
+            <div class="container money-box">
+                <div>tab: 全部 收入 支出</div>
+                <div class="empty-box">
+                    <img class="ic" src="/static/img/empty.svg">
+                    <div>未找到记录</div>
                 </div>
             </div>
         </main>
-        <ui-footer>
-
-        </ui-footer>
+        <ui-footer></ui-footer>
     </div>
 </template>
 
@@ -20,6 +18,7 @@
     export default {
         data () {
             return {
+                user: null
             }
         },
         mounted() {
@@ -27,18 +26,13 @@
         },
         methods: {
             init() {
-                // TODO
-                this.$storage.set('user', {
-                    id: '1'
-                })
-
                 let userId = this.$storage.get('user').id
-                this.$http.get(`/users/${userId}/addresses`)
+                this.$http.get(`/users/${userId}`)
                     .then(response => {
                             let data = response.data
                             console.log(data)
                             if (data.code === 0) {
-                                this.addresses = data.data
+                                this.user = data.data
                             }
                         },
                         response => {

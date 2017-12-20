@@ -3,30 +3,24 @@
         <div style="height: 100%">
             <div class="food">
                 <div class="food-type">
-                    <a v-for="(item, i) of listMenu"
-                       :key="i"
+                    <a v-for="(group, i) of groups" :key="group.id"
                        href="javascript:;"
-                       :data-set="item.menuTypeId"
-                       :class="activeType(item.menuTypeId)"
-                       @click="scrollTo(item.menuTypeId)">
-                        {{item.menuType}}
+                       :data-set="group.id"
+                       :class="activeType(group.id)"
+                       @click="scrollTo(group.id)">
+                        {{ group.name }}
                     </a>
                 </div>
                 <div class="order-food-list">
-                    <template v-for="(item, index) of listMenu">
-                        <lc-scroll-item :key="index" :id="item.menuTypeId">
-                            <div class="food-type-title retainbb">
-                                {{item.menuType}}
-                            </div>
-                        </lc-scroll-item>
-                        <template v-for="(food, foodIndex) of item.foodList">
-                            <lc-scroll-item :key="food.menuId">
-                                <food-item
-                                        :isLast="(index === listMenu.length-1 && foodIndex === item.foodList.length -1)"
-                                        :food="food"
-                                        @input="handleNumber">
-                                </food-item>
-                            </lc-scroll-item>
+                    <template v-for="(group, index) of groups">
+                        <div class="food-type-title retainbb" :key="group.id" :id="group.id">
+                            {{ group.name }}
+                        </div>
+                        <template v-for="goods in group.goodses">
+                            <food-item
+                                    :goods="goods"
+                                    @input="handleNumber">
+                            </food-item>
                         </template>
                     </template>
                 </div>
@@ -53,13 +47,21 @@
         },
         data () {
             return {
+                goodses: [],
+                groups: [
+                    {
+                        id: '1',
+                        name: '五谷鱼粉',
+                        goodses: []
+                    },
+                    {
+                        id: '1',
+                        name: '小吃',
+                        goodses: []
+                    }
+                ],
                 counter: 2,
                 active: ''
-            }
-        },
-        computed: {
-            listMenu () {
-                return this.$store.state.listMenu
             }
         },
         mounted () {
@@ -117,23 +119,23 @@
                 return listMenu
             },
             getShopByid () {
-                const shopId = this.$route.params.shopId
-                this.$http.post(`/shop/getShopByid`, this.$qs.stringify({
-                    shopId: shopId
-                }))
+                const shopId = this.$route.params.id
+                this.$http.get(`/shops/${shopId}/goodses`)
                         .then(response => {
-                            const originList = response.data.listMenu
+                            let data = response.data
+                            console.log(data)
+                            if (data.code === 0) {
+                                this.goodses = data.data
+                                this.groups[0].goodses = data.data
 
-                            const list = this.returnListMenu(originList)
-                            this.$store.commit(UPDATE_LISTMENU, list)
-                            this.$store.commit(UPDATE_COMMENTLIST, response.data.listAssess)
+                                const originList = response.data.listMenu
 
-                            this.$nextTick(() => {
-                                this.active = list.length > 0 && list[0].menuTypeId
-                                this.$refs.scrollFood.init()
-                            })
+                                const list = this.returnListMenu(originList)
+                                this.$store.commit(UPDATE_LISTMENU, list)
+                                this.$store.commit(UPDATE_COMMENTLIST, response.data.listAssess)
 
-                            this.getCartByid()
+                                this.getCartByid()
+                            }
                         })
             },
             getCartByid () {
