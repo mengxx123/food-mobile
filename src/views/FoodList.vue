@@ -124,18 +124,16 @@
                         .then(response => {
                             let data = response.data
                             console.log(data)
-                            if (data.code === 0) {
-                                this.goodses = data.data
-                                this.groups[0].goodses = data.data
+                            this.goodses = data
+                            this.groups[0].goodses = data
 
-                                const originList = response.data.listMenu
+                            const originList = response.data.listMenu
 
-                                const list = this.returnListMenu(originList)
-                                this.$store.commit(UPDATE_LISTMENU, list)
-                                this.$store.commit(UPDATE_COMMENTLIST, response.data.listAssess)
+                            const list = this.returnListMenu(originList)
+                            this.$store.commit(UPDATE_LISTMENU, list)
+                            this.$store.commit(UPDATE_COMMENTLIST, response.data.listAssess)
 
-                                this.getCartByid()
-                            }
+                            this.getCartByid()
                         })
             },
             getCartByid () {

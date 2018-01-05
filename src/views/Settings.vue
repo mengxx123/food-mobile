@@ -1,5 +1,5 @@
 <template>
-    <div class="page-about">
+    <div class="page-settings">
         <ui-header title="个人中心"></ui-header>
         <main class="page-body" v-if="user">
             <div class="container">

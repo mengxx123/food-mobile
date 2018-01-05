@@ -12,54 +12,48 @@
                 <router-link to="/me/v2">新版本</router-link>
                 <router-link to="/orders">我的订单</router-link>
                 <p>
-                    <router-link to="/addresses">我的地址</router-link>
+                    <router-link to="/me/addresses">我的地址</router-link>
                 </p>
             </div>
-            <div class="vip-card">
-                <div class="inner">
-                    <img class="img" src="/static/img/card-bg.png">
-                    <header class="header">
-                        <img class="logo" src="/static/img/shop-logo.png">
-                        <div class="info">
-                            <div>餐餐缘餐饮</div>
-                            <div>会员</div>
-                        </div>
-                        <button class="o-ta--c fz-white" @click="dialogVisible = true">
-                            <img src="/static/img/qrcode.svg" alt="" width="21">
-                        </button>
-                    </header>
-                    <footer class="footer">
-                        NO.15602221234
-                    </footer>
-                </div>
-            </div>
+
             <section class="page-me-section">
                 <header class="header">
                     <h2 class="title">我的资产</h2>
                 </header>
                 <ul class="list">
                     <li class="item">
-                        <router-link class="link" to="/me/money">
+                        <router-link class="link" to="/me/wallet">
+                            <i class="icon icon-package"></i>
                             <h3 class="title">我的钱包</h3>
-                            <div></div>
+                            <div class="content"></div>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/money">
+                            <i class="icon icon-money"></i>
                             <h3 class="title">余额</h3>
-                            <div>￥10.00</div>
+                            <div class="content">￥10.00</div>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/score">
+                            <i class="icon icon-score"></i>
                             <h3 class="title">积分</h3>
-                            <div>100 分</div>
+                            <div class="content">100 分</div>
+                        </router-link>
+                    </li>
+                    <li class="item">
+                        <router-link class="link" to="/me/cards">
+                            <i class="icon icon-card"></i>
+                            <h3 class="title">卡包</h3>
+                            <div class="content">0 张</div>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/coupon">
+                            <i class="icon icon-coupon"></i>
                             <h3 class="title">抵用券</h3>
-                            <div>1张待使用</div>
+                            <div class="content">1张待使用</div>
                         </router-link>
                     </li>
                 </ul>
@@ -71,26 +65,31 @@
                 <ul class="list">
                     <li class="item">
                         <router-link class="link" to="/me/money">
+                            <i class="icon icon-member"></i>
                             <h3 class="title">会员中心</h3>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/money">
+                            <i class="icon icon-mobile_recharge"></i>
                             <h3 class="title">手机充值</h3>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/score">
+                            <i class="icon icon-invoice"></i>
                             <h3 class="title">发票助手</h3>
                         </router-link>
                     </li>
                     <li class="item">
                         <router-link class="link" to="/me/money">
+                            <i class="icon icon-service"></i>
                             <h3 class="title">客服中心</h3>
                         </router-link>
                     </li>
                     <li class="item">
-                        <router-link class="link" to="/me/money">
+                        <router-link class="link" to="/about">
+                            <i class="icon icon-about"></i>
                             <h3 class="title">关于美团</h3>
                         </router-link>
                     </li>
@@ -99,25 +98,7 @@
 
         </main>
         <ui-footer></ui-footer>
-        <div class="dialog-box" v-if="dialogVisible">
-            <div class="dialog">
-                <h2 class="title">哈哈</h2>
-                <div class="tip">需要<span class="text-highlight">会员余额支付</span>时，请向店员出示</div>
-                <img src="/static/img/barcode.png">
-                <img src="/static/img/qrcode.png">
-                <div>
-                    每60s自动刷新
-                    <button class="btn-refresh"><img
-                            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ0cHgiIGhlaWdodD0iNDRweCIgdmlld0JveD0iMCAwIDQ0IDQ0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0MCAoMzM3NjIpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPuWIt+aWsDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLmjpLpmJ9f6K+m5oOFIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTU2LjAwMDAwMCwgLTg3Ni4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0Mi4wMDAwMDAsIDg2MC4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSLliLfmlrAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxNC4wMDAwMDAsIDE2LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiNGRkZGRkYiIHg9IjAiIHk9IjAiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOS42MjUxNDUsMzIuMzk3Njk0NiBDMjcuMzkzODI3OSwzMy45NjM5MzUzIDI0Ljc3NjcwODksMzQuNzQ0MTc2NSAyMi4xMDc3NjU4LDM0LjcxMjUwNjIgQzIxLjc1MzYzNDIsMzQuNzA2NzQ3OSAyMS40MDUyNjA4LDM0LjY4MDgzNTkgMjEuMDU2ODg3NCwzNC42NTQ5MjM4IEMyMC45MTU4MTA2LDM0LjY0MDUyODIgMjAuNzc0NzMzOCwzNC42MTc0OTUzIDIwLjYzMzY1NywzNC41OTczNDE0IEMyMC4zNTcyNjE2LDM0LjU2Mjc5MiAyMC4wODk1MDM1LDM0LjUyODI0MjYgMTkuODIxNzQ1NSwzNC40NzM1MzkzIEMxOS42NTc2MzU3LDM0LjQ0NDc0ODEgMTkuNDkzNTI1OSwzNC4zOTg2ODIyIDE5LjMzNTE3NDQsMzQuMzYxMjUzNyBDMTkuMDczMTc0NiwzNC4zMDM2NzEzIDE4LjgxNDA1MzksMzQuMjQ2MDg4OSAxOC41NTc4MTIzLDM0LjE3MTIzMTggQzE4LjQzNjg4OTMsMzQuMTI1MTY1OSAxOC4zMjE3MjQ2LDM0LjA4NzczNzQgMTguMjAwODAxNiwzNC4wMzg3OTI0IEMxNy45MDQyNTIzLDMzLjk0NjY2MDYgMTcuNjEwNTgyMiwzMy44NDMwMTIzIDE3LjMyODQyODYsMzMuNzI0OTY4NCBDMTcuMjY1MDg4LDMzLjY5NjE3NzIgMTcuMjAxNzQ3MywzMy42NzMxNDQzIDE3LjEzODQwNjcsMzMuNjQ3MjMyMiBDMTYuODA3MzA4MSwzMy40OTQ2Mzg5IDE2LjQ3OTA4ODUsMzMuMzM5MTY2NSAxNi4xNTk1MDYzLDMzLjE3MjE3NzYgQzE2LjE0Nzk4OTksMzMuMTYzNTQwMyAxNi4xMzA3MTUxLDMzLjE1Nzc4MiAxNi4xMTkxOTg3LDMzLjE0OTE0NDcgQzE1LjA0MjQwODIsMzIuNTU2MDQ2MiAxNC4wNjA2Mjg3LDMxLjgyNzYyOTEgMTMuMTk2ODkzMSwzMC45NTgxMzUyIEMxMy4xODI0OTc1LDMwLjk0MzczOTYgMTMuMTcwOTgxLDMwLjkyNjQ2NDkgMTMuMTUzNzA2MywzMC45MTIwNjkzIEMxMi44ODU5NDgyLDMwLjY0NDMxMTMgMTIuNjI5NzA2NywzMC4zNjc5MTU5IDEyLjM4Nzg2MDcsMzAuMDY4NDg3NSBDMTIuMzM4OTE1NywzMC4wMDgwMjYgMTIuMjg5OTcwNiwyOS45NDc1NjQ1IDEyLjIzODE0NjUsMjkuODc1NTg2NiBDMTAuNDg0NzYzMSwyNy42ODE2OTggOS40MjgxMjY1NCwyNC45MDMzNDg0IDkuNDI4MTI2NTQsMjEuODgzMTUyNyBMMTIuODA4MjEyLDIxLjg4MzE1MjcgTDcuNDA0MTA2MDIsMTMuNzc4NDMzMyBMMiwyMS44ODMxNTI3IEw1LjM3NDMyNzI1LDIxLjg4MzE1MjcgQzUuMzc0MzI3MjUsMjUuNDMzMTA2MiA2LjQ4NTY2NzExLDI4LjcyNjgxODIgOC4zNjU3MzE3LDMxLjQ1MzM0MzcgQzguMzg4NzY0NjUsMzEuNDkzNjUxMyA4LjQwMzE2MDI0LDMxLjUzNjgzODEgOC40MjkwNzIzMSwzMS41NzEzODc1IEM4LjYyMTk3MzI3LDMxLjg1MzU0MTIgOC44NDA3ODYzLDMyLjEwOTc4MjggOS4wNDgwODI4NiwzMi4zNjg5MDM1IEM5LjEyODY5ODE5LDMyLjQ2MzkxNDQgOS4xOTc3OTcwNCwzMi41NjE4MDQ0IDkuMjgxMjkxNDgsMzIuNjY4MzMxOCBDOS41ODY0NzgwOCwzMy4wMzY4NTkgOS45MTc1NzY3NCwzMy4zODgxMTE1IDEwLjI1MTU1NDUsMzMuNzMzNjA1OCBDMTAuMjg2MTA0LDMzLjc2ODE1NTIgMTAuMzE0ODk1MSwzMy43OTY5NDY0IDEwLjM0MzY4NjMsMzMuODI4NjE2NyBDMTEuNDc1MTgsMzQuOTYyOTg5NSAxMi43NTA2Mjk3LDM1LjkxMzA5ODcgMTQuMTQxMjQ0LDM2LjY3ODk0NDMgQzE0LjE3ODY3MjYsMzYuNjk5MDk4MiAxNC4yMTAzNDI5LDM2LjcxNjM3MjkgMTQuMjUzNTI5NywzNi43Mzk0MDU4IEMxNC42NTM3MjcyLDM2Ljk1NTMzOTcgMTUuMDY1NDQxMiwzNy4xNTM5OTg5IDE1LjQ4MDAzNDMsMzcuMzM1MzgzNCBDMTUuNTg2NTYxNywzNy4zODE0NDkzIDE1LjY4NzMzMDgsMzcuNDI3NTE1MiAxNS43ODgxLDM3LjQ3MDcwMiBDMTYuMTQ3OTg5OSwzNy42MjMyOTUzIDE2LjUxMzYzNzksMzcuNzQ5OTc2NSAxNi44ODIxNjUyLDM3Ljg3NjY1NzggQzE3LjA1Nzc5MTQsMzcuOTM3MTE5MiAxNy4yMjc2NTk0LDM3Ljk5NDcwMTYgMTcuNDA2MTY0OCwzOC4wNTIyODQgQzE3LjcyODYyNjEsMzguMTQ0NDE1OCAxOC4wNTY4NDU2LDM4LjIyNzkxMDIgMTguMzkwODIzNCwzOC4zMDI3NjczIEMxOC42MTI1MTU2LDM4LjM1NDU5MTUgMTguODI1NTcwNCwzOC40MTIxNzM5IDE5LjA1MzAyMDcsMzguNDUyNDgxNSBDMTkuMTQ1MTUyNSwzOC40NzU1MTQ1IDE5LjIzMTUyNjEsMzguNTA0MzA1NyAxOS4zMjM2NTc5LDM4LjUxMjk0MyBDMTkuNjQwMzYxLDM4LjU3MDUyNTQgMTkuOTU0MTg0OSwzOC41OTkzMTY2IDIwLjI2NTEyOTgsMzguNjM2NzQ1MSBDMjAuMzgwMjk0NSwzOC42NTY4OTg5IDIwLjQ5MjU4MDEsMzguNjc3MDUyOCAyMC42MDQ4NjU4LDM4LjY4ODU2OTMgQzIxLjE2OTE3MzEsMzguNzQzMjcyNSAyMS43MzA2MDEyLDM4Ljc3NzgyMTkgMjIuMjkyMDI5NCwzOC43Nzc4MjE5IEMyNS43MjEwNTk5LDM4Ljc3NzgyMTkgMjkuMDcyMzU0MiwzNy43Mjk4MjI3IDMxLjk0NTcxNDgsMzUuNzE0NDM5NSBDMzIuODYxMjc0NiwzNS4wNzIzOTYgMzMuMDg1ODQ1OCwzMy44MDU1ODM3IDMyLjQ0NjY4MTUsMzIuODk1NzgyMiBDMzEuODAxNzU4OSwzMS45NzE1ODUxIDMwLjU0MDcwNDgsMzEuNzQ5ODkyOSAyOS42MjUxNDUsMzIuMzk3Njk0NiBMMjkuNjI1MTQ1LDMyLjM5NzY5NDYgWiBNMzkuMTQzNTExOCwyMS44ODMxNTI3IEMzOS4xNDM1MTE4LDE4LjM0MTgzNjYgMzguMDQ2NTY3NiwxNS4wNTEwMDM4IDM2LjE3NTE0MDMsMTIuMzM4ODczOSBDMzYuMTQ2MzQ5MSwxMi4yOTI4MDggMzYuMTI5MDc0NCwxMi4yNDM4NjI5IDM2LjEwNjA0MTUsMTIuMjAzNTU1MyBDMzUuODY0MTk1NSwxMS44Njk1Nzc1IDM1LjYxNjU5MTMsMTEuNTU4NjMyNyAzNS4zNjAzNDk3LDExLjI0NDgwODcgQzM1LjMzMTU1ODUsMTEuMjEwMjU5MyAzNS4zMDI3NjczLDExLjE2OTk1MTYgMzUuMjc2ODU1MywxMS4xMjk2NDQgQzMzLjU1NTE0MjIsOS4wNTY2Nzg0MSAzMS40MDQ0NDA1LDcuNDQ3MjUwOTkgMjguOTcxNTg1MSw2LjM5NjM3MjYzIEMyOC44OTk2MDcxLDYuMzY3NTgxNDQgMjguODM5MTQ1Niw2LjMzNTkxMTEzIDI4Ljc2NzE2NzYsNi4zMDcxMTk5NCBDMjguMzc1NjA3NSw2LjE0NTg4OTI5IDI3Ljk3ODI4OTEsNi4wMDc2OTE1OSAyNy41NzIzMzMzLDUuODY5NDkzODggQzI3LjQzNDEzNTYsNS44MjM0Mjc5OCAyNy4yODczMDA2LDUuNzcxNjAzODQgMjcuMTQzMzQ0Niw1LjcyODQxNzA2IEMyNi43OTIwOTIxLDUuNjIxODg5NjYgMjYuNDQwODM5Niw1LjUzNTUxNjEgMjYuMDgzODI4OSw1LjQ1MjAyMTY1IEMyNS44ODUxNjk3LDUuNDA4ODM0ODcgMjUuNjgzNjMxNCw1LjM1NzAxMDczIDI1LjQ4NDk3MjIsNS4zMTY3MDMwNyBDMjUuMzg3MDgyMSw1LjI5OTQyODM2IDI1LjI5NzgyOTUsNS4yNzA2MzcxNyAyNS4xOTQxODEyLDUuMjUwNDgzMzQgQzI0LjkyNjQyMzEsNS4yMDcyOTY1NSAyNC42NjQ0MjMzLDUuMTgxMzg0NDkgMjQuMzk2NjY1Myw1LjE0OTcxNDE4IEMyNC4yMDk1MjI1LDUuMTI5NTYwMzUgMjQuMDMxMDE3Miw1LjEwMDc2OTE2IDIzLjg0Mzg3NDUsNS4wODA2MTUzMyBDMjMuMzk0NzMxOSw1LjAzNzQyODU0IDIyLjk0ODQ2ODUsNS4wMjAxNTM4MyAyMi41MDIyMDUxLDUuMDExNTE2NDggQzIyLjQyMTU4OTgsNS4wMTE1MTY0OCAyMi4zNDA5NzQ0LDUgMjIuMjYwMzU5MSw1IEMyMi4yNDU5NjM1LDUgMjIuMjMxNTY3OSw1LjAwMjg3OTEyIDIyLjIxNzE3MjMsNS4wMDU3NTgyNCBDMTguNzkxMDIwOSw1LjAwODYzNzM2IDE1LjQ0NTQ4NDksNi4wNDIyNDEwMSAxMi41Nzc4ODI1LDguMDU0NzQ1MDYgQzExLjY2MjMyMjcsOC42OTM5MDk0NCAxMS40Mzc3NTE1LDkuOTU3ODQyNiAxMi4wODI2NzQxLDEwLjg3OTE2MDYgQzEyLjcxODk1OTMsMTEuNzkxODQxMyAxMy45ODg2NTA3LDEyLjAxNjQxMjYgMTQuOTA3MDg5NiwxMS4zNzE0ODk5IEMxNy4xMjExMzIsOS44MjI1MjQwMiAxOS43MDY1ODA3LDkuMDMzNjQ1NDYgMjIuMzU4MjQ5MSw5LjA1OTU1NzUzIEMyMi43MzgyOTI4LDkuMDYyNDM2NjUgMjMuMTE4MzM2NSw5LjA3OTcxMTM2IDIzLjQ4Njg2MzcsOS4xMTcxMzk5MSBDMjMuNjAyMDI4NSw5LjEyNTc3NzI2IDIzLjcxMTQzNSw5LjE0MzA1MTk4IDIzLjgyNjU5OTcsOS4xNjAzMjY2OSBDMjQuMTMxNzg2Myw5LjE5Nzc1NTIzIDI0LjQzNDA5MzgsOS4yMzgwNjI5IDI0LjczMzUyMjIsOS4zMDE0MDM1MSBDMjQuODYzMDgyNSw5LjMyNDQzNjQ2IDI0Ljk5NTUyMiw5LjM1ODk4NTg5IDI1LjExOTMyNDEsOS4zODc3NzcwNyBDMjUuNDE1ODczMyw5LjQ1Mzk5NjgxIDI1LjcwMzc4NTIsOS41MjMwOTU2NiAyNS45ODg4MTgsOS42MDk0NjkyMiBDMjYuMDgzODI4OSw5LjYzNTM4MTI5IDI2LjE3MDIwMjUsOS42NjcwNTE2IDI2LjI1NjU3Niw5LjcwMTYwMTAzIEMyNi41ODc2NzQ3LDkuODA4MTI4NDIgMjYuOTEwMTM2LDkuOTIwNDE0MDYgMjcuMjIxMDgwOCwxMC4wNTI4NTM1IEMyNy4yNTU2MzAyLDEwLjA2MTQ5MDkgMjcuMjg3MzAwNiwxMC4wODc0MDI5IDI3LjMxODk3MDksMTAuMDk4OTE5NCBDMjkuMjEwNTUxOSwxMC45MTA4MzA5IDMwLjg2NjA0NTIsMTIuMTYwMzY4NSAzMi4xNjE2NDg3LDEzLjcyNjYwOTEgQzMyLjE2NDUyNzgsMTMuNzMyMzY3NCAzMi4xNzAyODYxLDEzLjc0Mzg4MzggMzIuMTgxODAyNSwxMy43NTI1MjEyIEMzNC4wMDE0MDU2LDE1Ljk2OTQ0MjcgMzUuMDk1NDcwOCwxOC43OTk2MTY1IDM1LjA5ODM0OTksMjEuODgzMTUyNyBMMzEuNzE1Mzg1MywyMS44ODMxNTI3IEwzNy4xMjgxMjg3LDI5Ljk5MDc1MTMgTDQyLjUyNjQ3NjQsMjEuODgzMTUyNyBMMzkuMTQzNTExOCwyMS44ODMxNTI3IEwzOS4xNDM1MTE4LDIxLjg4MzE1MjcgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjMjA5Q0ZCIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
-                            alt="" class="btn-refresh-img"></button>
-                </div>
-                <div class="code-refresh-time"><!-- react-text: 135 -->每<!-- /react-text --><!-- react-text: 136 -->60
-
-                </div>
-
-                <div>如遇扫码失败请将屏幕调至最亮重新扫码</div>
-            </div>
-        </div>
+        <ui-nav></ui-nav>
         <ui-loading v-if="loadingVisible"></ui-loading>
     </div>
 </template>
@@ -127,7 +108,6 @@
         data () {
             return {
                 user: null,
-                dialogVisible: false,
                 loadingVisible: false
             }
         },
@@ -141,9 +121,7 @@
                     .then(response => {
                             let data = response.data
                             console.log(data)
-                            if (data.code === 0) {
-                                this.user = data.data
-                            }
+                            this.user = data
                         },
                         response => {
                             console.log(response)

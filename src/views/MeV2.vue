@@ -4,11 +4,9 @@
         <main class="page-body" v-if="user">
             <div class="user-info-box">
                 <img class="avatar" :src="user.avatar || '/static/img/cartoon-avatar.svg'">
-                <img class="vip" src="/static/img/vip.svg">
                 <div class="name">{{ user.name }}</div>
             </div>
             <div class="container">
-
                 <router-link to="/me/v2">新版本</router-link>
                 <router-link to="/orders">我的订单</router-link>
                 <p>
@@ -37,7 +35,7 @@
             </ul>
             <ul class="common-list">
                 <li class="item">
-                    <router-link class="link" to="/">
+                    <router-link class="link" to="/me/orders">
                         <h3 class="title">
                             <i class="icon icon-order"></i>
                             订单中心
@@ -55,7 +53,7 @@
                     </router-link>
                 </li>
                 <li class="item">
-                    <router-link class="link" to="/">
+                    <router-link class="link" to="/me/address">
                         <h3 class="title">
                             <i class="icon icon-location"></i>
                             地址管理
@@ -66,7 +64,7 @@
             </ul>
             <ul class="common-list">
                 <li class="item">
-                    <router-link class="link" to="/">
+                    <router-link class="link" to="/me/settings">
                         <h3 class="title">
                             <i class="icon icon-setting"></i>
                             设置
@@ -75,70 +73,6 @@
                     </router-link>
                 </li>
             </ul>
-            <section class="page-me-section">
-                <header class="header">
-                    <h2 class="title">我的资产</h2>
-                </header>
-                <ul class="list">
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">我的钱包</h3>
-                            <div></div>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">余额</h3>
-                            <div>￥10.00</div>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/score">
-                            <h3 class="title">积分</h3>
-                            <div>100 分</div>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/coupon">
-                            <h3 class="title">抵用券</h3>
-                            <div>1张待使用</div>
-                        </router-link>
-                    </li>
-                </ul>
-            </section>
-            <section class="page-me-section">
-                <header class="header">
-                    <h2 class="title">美团服务</h2>
-                </header>
-                <ul class="list">
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">会员中心</h3>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">手机充值</h3>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/score">
-                            <h3 class="title">发票助手</h3>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">客服中心</h3>
-                        </router-link>
-                    </li>
-                    <li class="item">
-                        <router-link class="link" to="/me/money">
-                            <h3 class="title">关于美团</h3>
-                        </router-link>
-                    </li>
-                </ul>
-            </section>
-
         </main>
         <ui-footer></ui-footer>
         <div class="dialog-box" v-if="dialogVisible">
@@ -183,9 +117,7 @@
                     .then(response => {
                             let data = response.data
                             console.log(data)
-                            if (data.code === 0) {
-                                this.user = data.data
-                            }
+                            this.user = data
                         },
                         response => {
                             console.log(response)

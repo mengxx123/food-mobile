@@ -6,13 +6,11 @@
                 <router-link to="/about">关于</router-link>
                 <router-link to="/shops/1">店铺详情</router-link>
                 <div>
-                    <router-link to="/me">个人中心</router-link>
                 </div>
             </div>
         </main>
-        <ui-footer>
-
-        </ui-footer>
+        <ui-footer></ui-footer>
+        <ui-nav></ui-nav>
     </div>
 </template>
 

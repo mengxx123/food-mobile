@@ -1,6 +1,9 @@
 @import "var";
 
 .page-me {
+    .page-body {
+        padding-bottom: 46px;
+    }
     //background-color: #fff;
 }
 .user-info-box {
@@ -45,49 +48,14 @@
         .title {
             margin-bottom: 8px;
         }
-    }
-}
-
-.vip-card {
-    color: #fff;
-    padding: 25px 32px 15px;
-    .inner {
-        position: relative;
-    }
-    .img {
-        width: 100%;
-        border-radius: .7em;
-    }
-    .header {
-        display: flex;
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        top: 0;
-        left: 0;
-        padding: 20px;
-    }
-    .logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        flex: none;
-        margin-right: 5px;
-    }
-    .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-width: 0;
-        height: 100%;
-    }
-    .footer {
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-        padding: 20px;
+        .icon {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        .content {
+            color: #999;
+        }
     }
 }
 

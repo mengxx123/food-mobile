@@ -15,12 +15,24 @@ const GoodsDetail = resolve => require(['@/views/GoodsDetail'], resolve)
 const Address = resolve => require(['@/views/Address'], resolve)
 const AddressAdd = resolve => require(['@/views/AddressAdd'], resolve)
 const AddressSelect = resolve => require(['@/views/AddressSelect'], resolve)
+const AddressUpdate = resolve => require(['@/views/AddressUpdate'], resolve)
 
 const Search = resolve => require(['@/views/Search'], resolve)
+const Cart = resolve => require(['@/views/Cart'], resolve)
+const All = resolve => require(['@/views/All'], resolve)
+
+const Settings = resolve => require(['@/views/Settings'], resolve)
 
 const Me = resolve => require(['@/views/Me'], resolve)
 const MeV2 = resolve => require(['@/views/MeV2'], resolve)
 const Money = resolve => require(['@/views/Money'], resolve)
+const Wallet = resolve => require(['@/views/Wallet'], resolve)
+
+const BankCard = resolve => require(['@/views/BankCard'], resolve)
+const BankCardDetail = resolve => require(['@/views/BankCardDetail'], resolve)
+
+const Card = resolve => require(['@/views/Card'], resolve)
+const CardDetail = resolve => require(['@/views/CardDetail'], resolve)
 const Score = resolve => require(['@/views/Score'], resolve)
 const Coupon = resolve => require(['@/views/Coupon'], resolve)
 const MoneyDetail = resolve => require(['@/views/MoneyDetail'], resolve)
@@ -35,6 +47,10 @@ const APP_NAME = '云设'
 let routes = [
     {
         path: '/',
+        redirect: '/home'
+    },
+    {
+        path: '/home',
         component: Home,
         meta: {
             title: '首页'
@@ -45,6 +61,13 @@ let routes = [
         component: About,
         meta: {
             title: '关于'
+        }
+    },
+    {
+        path: '/all',
+        component: All,
+        meta: {
+            title: '分类'
         }
     },
     {
@@ -69,7 +92,14 @@ let routes = [
         }
     },
     {
-        path: '/orders',
+        path: '/me/cart',
+        component: Cart,
+        meta: {
+            title: '购物车'
+        }
+    },
+    {
+        path: '/me/orders',
         component: Order,
         meta: {
             title: '我的订单'
@@ -90,7 +120,7 @@ let routes = [
         }
     },
     {
-        path: '/addresses',
+        path: '/me/addresses',
         component: Address,
         meta: {
             title: '收货地址'
@@ -101,6 +131,13 @@ let routes = [
         component: AddressAdd,
         meta: {
             title: '添加收货地址'
+        }
+    },
+    {
+        path: '/addresses/:id/update',
+        component: AddressUpdate,
+        meta: {
+            title: '修改收货地址'
         }
     },
     {
@@ -132,10 +169,52 @@ let routes = [
         }
     },
     {
+        path: '/me/wallet',
+        component: Wallet,
+        meta: {
+            title: '钱包'
+        }
+    },
+    {
+        path: '/me/bankCards',
+        component: BankCard,
+        meta: {
+            title: '银行卡'
+        }
+    },
+    {
+        path: '/me/bankCards/:id',
+        component: BankCardDetail,
+        meta: {
+            title: '银行卡'
+        }
+    },
+    {
+        path: '/me/cards',
+        component: Card,
+        meta: {
+            title: '卡包'
+        }
+    },
+    {
+        path: '/cards/:id',
+        component: CardDetail,
+        meta: {
+            title: '卡片详情'
+        }
+    },
+    {
         path: '/me/score',
         component: Score,
         meta: {
             title: '积分'
+        }
+    },
+    {
+        path: '/me/settings',
+        component: Settings,
+        meta: {
+            title: '设置'
         }
     },
     {

@@ -1,0 +1,121 @@
+@import "var";
+
+.page-card {
+    .card-box {
+        padding-top: px2rem(300);
+        text-align: center;
+    }
+}
+
+.card-list {
+    .item {
+        height: 110px;
+        padding: 16px;
+        padding-bottom: 0;
+    }
+    .link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("/static/img/card-bg.png");
+        border-radius: 4px;
+        color: #fff;
+    }
+    .header {
+        height: 100%;
+        display: flex;
+        padding: 20px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        flex: none;
+        margin-right: 5px;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        height: 100%;
+    }
+}
+
+.vip-card {
+    color: #fff;
+    padding: 25px 32px 15px;
+    .inner {
+        position: relative;
+    }
+    .img {
+        width: 100%;
+        border-radius: .7em;
+    }
+    .header {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        left: 0;
+        padding: 20px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        flex: none;
+        margin-right: 5px;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        height: 100%;
+    }
+    .footer {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 20px;
+    }
+}
+
+.bank-card-list {
+    .item {
+        height: 104px;
+        padding: 16px;
+        padding-bottom: 0;
+    }
+    .link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #c75056;
+        border-radius: 4px;
+        color: #fff;
+    }
+    .header {
+        height: 100%;
+        display: flex;
+        padding: 20px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        flex: none;
+        margin-right: 5px;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        height: 100%;
+    }
+}

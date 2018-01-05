@@ -1,9 +1,9 @@
 <template>
     <div class="page-about">
-        <ui-header></ui-header>
+        <ui-header title="关于"></ui-header>
         <main class="page-body">
             <div class="container">
-                这是关于页面
+                外卖系统 v1.0.1
             </div>
         </main>
         <ui-footer></ui-footer>

@@ -39,6 +39,8 @@
 </script>
 
 <style lang="scss">
+    @import "../../../scss/var";
+
     .radio {
         position: relative;
         display: inline-block;
@@ -96,7 +98,7 @@
                 &:after {
                     width: 8px;
                     height: 8px;
-                    background-color: #fab715;
+                    background-color: $primary;
                     transform: scale(1);
                 }
             }

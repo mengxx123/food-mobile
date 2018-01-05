@@ -13,7 +13,7 @@
             </div>
             <ul class="address-list address-list-in" :class="{managing: managing}">
                 <li class="address-item" v-for="address in addresses">
-                    <i class="iconfont icon-remove" @click="remove(inAddresses, address)" v-if="managing"></i>
+                    <i class="icon icon-remove" @click="remove(inAddresses, address)" v-if="managing"></i>
                     <div class="address-content" @click="select(address)">
                         <div class="detail">{{ address.detail }}</div>
                         <div class="info">
@@ -24,13 +24,13 @@
                     </div>
                     <lc-radio class="radio" v-model="checked" :label="address.addressId"
                               @click.native="select(address)" v-if="!managing"></lc-radio>
-                    <i class="iconfont icon-edit" v-if="managing" @click="select(address)"></i>
+                    <i class="icon icon-edit" v-if="managing" @click="select(address)"></i>
                 </li>
             </ul>
             <h4 class="range" v-if="outAddresses.length">以下地址不在配送范围</h4>
             <ul class="address-list address-list-out" :class="{managing: managing}">
                 <li class="address-item" v-for="address in outAddresses" :key="address.addressId">
-                    <i class="iconfont icon-remove" @click="remove(outAddresses, address)" v-if="managing"></i>
+                    <i class="icon icon-remove" @click="remove(outAddresses, address)" v-if="managing"></i>
                     <div>
                         <div class="detail">{{ address.detailAddress }}</div>
                         <div class="info">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <lc-radio class="radio" label="none" v-if="!managing"></lc-radio>
-                    <i class="iconfont icon-edit" @click="updateAddress" v-if="managing"></i>
+                    <i class="icon icon-edit" @click="updateAddress" v-if="managing"></i>
                 </li>
             </ul>
             <a class="btn-bottom" @click="add">新增收货地址</a>
@@ -50,17 +50,13 @@
 </template>
 
 <script>
-    import {apiDomain} from '@/config'
-    import storage from '@/util/storage'
-    const qs = require('qs')
-
     export default {
         data () {
             return {
                 addresses: [],
                 inAddresses: [],
                 outAddresses: [],
-                managing: false
+                managing: true
             }
         },
         computed: {
@@ -89,9 +85,7 @@
                     .then(response => {
                             let data = response.data
                             console.log(data)
-                            if (data.code === 0) {
-                                this.addresses = data.data
-                            }
+                            this.addresses = data
                         },
                         response => {
                             console.log(response)
@@ -174,16 +168,10 @@
                 })
             },
             removeAjax (addresses, address) {
-                this.$http.post(apiDomain + '/address/deleteAddress', qs.stringify({
-                    addressId: address.addressId
-                }), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                }).then(
-                    response => {
+                this.$http.delete(`/addresses/${address.id}`)
+                    .then(response => {
                         for (let i = 0; i < addresses.length; i++) {
-                            if (addresses[i].addressId === address.addressId) {
+                            if (addresses[i].id === address.id) {
                                 addresses.splice(i, 1)
                             }
                         }
@@ -194,10 +182,7 @@
                     })
             },
             updateAddress (address) {
-                storage.set('updateAddress', address)
-                this.$store.state.prevUrl = 'AddressList'
-                this.$store.state.updateAddress = address
-                this.$router.push('addressUpdate/' + address.addressId)
+                this.$router.push(`/addresses/${address.id}/update`)
             }
         },
         watch: {

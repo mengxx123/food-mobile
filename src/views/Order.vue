@@ -52,9 +52,7 @@
                     .then(response => {
                         let data = response.data
                         console.log(data)
-                        if (data.code === 0) {
-                            this.orders = data.data
-                        }
+                            this.orders = data
                     },
                     response => {
                         console.log(response)
